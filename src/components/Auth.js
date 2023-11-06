@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
-import { addUser } from "../utils/UserSlice";
+import { addUser } from "../store/UserSlice";
 import { BG_URL,IMG_URL } from "../utils/constants";
 
 const Auth = () => {
@@ -89,7 +89,7 @@ const Auth = () => {
       <Header />
       <div className="absolute h-[100vh] w-[100vw]">
         <img
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           src={BG_URL}
           alt="bg"
         />

@@ -3,11 +3,11 @@ import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addUser, removeUser } from "../utils/UserSlice";
+import { addUser, removeUser } from "../store/UserSlice";
 import { LOGO } from "../utils/constants";
-import { ToggleGptSearch } from "../utils/gptSlice";
+import { ToggleGptSearch } from "../store/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
-import { changeLang } from "../utils/appSlice";
+import { changeLang } from "../store/appSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -59,11 +59,11 @@ const Header = () => {
   }
   return (
     <div className="flex justify-between absolute w-full bg-gradient-to-b from-black max-[480px]:px-2 px-3 sm:px-8 py-2 z-10">
-      <img className="w-32 max-[450px]:w-24 sm:w-48" src={LOGO} alt="logo" />
+      <img className="w-32 max-[450px]:w-28 sm:w-48" src={LOGO} alt="logo" />
       {user && (
         <div className="flex p-4">
           {showGptSearch && (
-            <select className="max-[400px]:w-16 w-20 m-1 rounded-md" onChange={langHandler}>
+            <select className="w-20 my-2 mx-1 rounded-md bg-gray-500 text-white outline-none" onChange={langHandler}>
               {SUPPORTED_LANGUAGES.map((lang) => (
                 <option key={lang.identifier} value={lang.identifier}>
                   {lang.name}
@@ -72,13 +72,13 @@ const Header = () => {
             </select>
           )}
           <button
-            className="text-white max-[450px]:text-sm bg-red-600 px-2 m-1 rounded-md sm:rounded-lg"
+            className="text-white max-[450px]:text-sm bg-red-600 px-2 mx-1 my-2 rounded-md sm:rounded-lg"
             onClick={gptSearchHandle}
           >
-            {showGptSearch ? "Home" : "GPT Search"}
+            {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
           <img
-            className="w-7 sm:w-12 h-7 sm:h-12 mx-3 my-1 rounded-full"
+            className="w-12 h-12 hidden sm:block mx-3 my-2 rounded-full"
             alt="user"
             src={user.photoURL}
           />

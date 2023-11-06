@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
-import { addNowPlayingMovies,addPopularMovies,addTopRatedMovies, addUpcomingMovies } from "../utils/MovieSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addNowPlayingMovies,addPopularMovies,addTopRatedMovies, addUpcomingMovies } from "../store/MovieSlice";
 
 export const useMovies = ({category,url}) => {
   const dispatch = useDispatch();
-
+  const movies = useSelector(store=>store.movie);
   useEffect(() => {
     getMovies();
   }, []);
@@ -18,16 +18,16 @@ export const useMovies = ({category,url}) => {
     const json = await data.json();
 
     if(category === 'Now Playing') {
-      dispatch(addNowPlayingMovies(json?.results));
+     if(!movies.nowPlayingMovies) dispatch(addNowPlayingMovies(json?.results));
     }
     if(category === 'Popular') {
-      dispatch(addPopularMovies(json?.results));
+     if(!movies.popularMovies) dispatch(addPopularMovies(json?.results));
     }
     if(category === 'Top Rated') {
-      dispatch(addTopRatedMovies(json?.results));
+     if(!movies.topRatedMovies) dispatch(addTopRatedMovies(json?.results));
     }
     if(category === 'Upcoming') {
-      dispatch(addUpcomingMovies(json?.results));
+     if(!movies.upcomingMovies) dispatch(addUpcomingMovies(json?.results));
     }
   }
 };

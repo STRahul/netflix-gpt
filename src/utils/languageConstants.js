@@ -1,6 +1,6 @@
 export const lang = {
       en:{
-          search: "Serach",
+          search: "Search",
           gptPlaceholder: "What would you like to watch today?"
       },
       hindi:{
