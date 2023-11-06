@@ -87,9 +87,9 @@ const Auth = () => {
   return (
     <div>
       <Header />
-      <div className="absolute h-[100vh] w-[100vw]">
+      <div className="fixed">
         <img
-          className="w-full h-full object-cover"
+          className="h-screen w-screen object-cover"
           src={BG_URL}
           alt="bg"
         />

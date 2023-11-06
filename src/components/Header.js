@@ -75,7 +75,7 @@ const Header = () => {
             className="text-white max-[450px]:text-sm bg-red-600 px-2 mx-1 my-2 rounded-md sm:rounded-lg"
             onClick={gptSearchHandle}
           >
-            {showGptSearch ? "Homepage" : "GPT Search"}
+            {showGptSearch ? "Home" : "GPT Search"}
           </button>
           <img
             className="w-12 h-12 hidden sm:block mx-3 my-2 rounded-full"
