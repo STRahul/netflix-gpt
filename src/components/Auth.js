@@ -96,7 +96,7 @@ const Auth = () => {
       </div>
 
       <form
-        className="absolute w-3/4 sm:w-1/2 lg:w-1/3 xl:w-1/4 bg-black md:p-12 p-4 my-36 mx-auto left-0 right-0 text-white rounded-lg opacity-[.82]"
+        className="absolute w-3/4 sm:w-1/2 lg:w-1/3 xl:w-[27%] bg-black md:p-12 p-4 my-36 mx-auto left-0 right-0 text-white rounded-lg opacity-[.82]"
         onSubmit={submitHandler}
       >
         <h1 className="text-3xl font-bold py-4">

@@ -83,7 +83,7 @@ const Header = () => {
             src={user.photoURL}
           />
           <button
-            className="font-bold text-white max-[450px]:text-sm"
+            className="text-white max-[450px]:text-sm bg-red-600 my-2 px-2 rounded-md md:rounded-lg"
             onClick={logoutHandler}
           >
             Logout

@@ -32,3 +32,5 @@ export const SUPPORTED_LANGUAGES = [
   {identifier: "hindi",name:'Hindi'},
   {identifier: "spanish",name:'Spanish'}
 ]
+
+export const OPENAI_KEY = process.env.REACT_APP_OPEN_AI;
